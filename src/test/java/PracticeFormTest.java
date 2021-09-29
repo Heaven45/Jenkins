@@ -6,7 +6,7 @@ import pages.RegistrationPage;
 
 import java.util.Map;
 
-public class PracticeFormTest {
+public class PracticeFormTest extends TestBase {
     Faker faker = new Faker();
 
     String firstName = faker.name().firstName();
