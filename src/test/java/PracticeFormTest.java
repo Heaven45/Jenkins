@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -44,6 +45,7 @@ public class PracticeFormTest extends TestBase {
         Configuration.startMaximized = true;
     }
 
+    @Tag("properties")
     @Test
     void fillFormTest() {
 
