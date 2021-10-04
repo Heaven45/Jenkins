@@ -1,17 +1,21 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.CredentialsConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static java.lang.String.format;
+
 
 public class TestBase {
+    public static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+
     @BeforeAll
     static void setup() {
-        String browserLink = System.getProperty("link");
-        String version = System.getProperty("version");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -20,9 +24,12 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
-        Configuration.remote = browserLink;
-        System.out.println(browserLink);
-        System.out.println(version);
+
+        String login = config.login();
+        String pass = config.pass();
+        String url = System.getProperty("link");
+
+        Configuration.remote = format("https://%s:%s@%s", login, pass, url);
     }
 
     @AfterEach
