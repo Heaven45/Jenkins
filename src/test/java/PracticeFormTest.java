@@ -64,11 +64,4 @@ public class PracticeFormTest extends TestBase {
                 .submit()
                 .checkResult(valuesToCheck);
     }
-
-
-    @Test
-    void test1() {
-        registrationPage.openPage();
-        System.out.println("Start");
-    }
 }

@@ -30,6 +30,8 @@ public class TestBase {
         String url = System.getProperty("link");
 
         Configuration.remote = format("https://%s:%s@%s", login, pass, url);
+
+        System.out.println(format("https://%s:%s@%s", login, pass, url));
     }
 
     @AfterEach
