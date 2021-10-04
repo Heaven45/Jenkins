@@ -11,6 +11,7 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         String browserLink = System.getProperty("link");
+        String version = System.getProperty("version");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -21,6 +22,7 @@ public class TestBase {
         Configuration.startMaximized = true;
         Configuration.remote = browserLink;
         System.out.println(browserLink);
+        System.out.println(version);
     }
 
     @AfterEach

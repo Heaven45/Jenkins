@@ -45,6 +45,7 @@ public class PracticeFormTest extends TestBase {
         Configuration.startMaximized = true;
     }
 
+    @Tag("properties")
     @Test
     void fillFormTest() {
         registrationPage
@@ -64,9 +65,10 @@ public class PracticeFormTest extends TestBase {
                 .checkResult(valuesToCheck);
     }
 
-    @Tag("properties")
+
     @Test
     void test1() {
+        registrationPage.openPage();
         System.out.println("Start");
     }
 }
