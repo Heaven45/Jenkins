@@ -45,10 +45,8 @@ public class PracticeFormTest extends TestBase {
         Configuration.startMaximized = true;
     }
 
-    @Tag("properties")
     @Test
     void fillFormTest() {
-
         registrationPage
                 .openPage()
                 .typeFirstName(firstName)
@@ -64,5 +62,11 @@ public class PracticeFormTest extends TestBase {
                 .choseStateAndCity("NCR", "Delhi")
                 .submit()
                 .checkResult(valuesToCheck);
+    }
+
+    @Tag("properties")
+    @Test
+    void test1() {
+        System.out.println("Start");
     }
 }

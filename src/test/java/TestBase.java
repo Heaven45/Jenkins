@@ -20,8 +20,7 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
         Configuration.remote = browserLink;
-
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        System.out.println(browserLink);
     }
 
     @AfterEach
@@ -31,5 +30,4 @@ public class TestBase {
         Attach.browserConsoleLogs();
         Attach.addVideo();
     }
-
 }
